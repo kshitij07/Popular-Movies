@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="title_activity_movie_details">Movie Details</string>
+    <string name="heading_release_date">Release Date</string>
+    <string name="heading_vote_average">Vote Average</string>
+    <string name="no_release_date_found">No release date found</string>
+    <string name="no_summary_found">No summary was found</string>
+    <string name="example_original_title">The Green Poster Man</string>
+    <string name="example_release_date">08–31–2015</string>
+    <string name="example_vote_average">8.2/10</string>
+    <string name="example_overview">A green, disconcerted, man takes on the mafia in underground North Korea to save his ferret. He\'ll find a lot of challenges, horror and romance on his journey. Who knows? Maybe Kim Jung-un makes a cameo appearance?</string>
+    <string name="parcel_movie">PARCEL_MOVIE</string>
+    <string name="pref_sort_method_key">SORT_METHOD</string>
+    <string name="pref_sort_vote_avg_desc_key">SORT_VOTE_AVERAGE_DESC</string>
+    <string name="pref_sort_pop_desc_key">SORT_POPULARITY_DESC</string>
+    <string name="tmdb_sort_pop_desc">popularity.desc</string>
+    <string name="tmdb_sort_vote_avg_desc">vote_average.desc</string>
+    <string name="description_movie_poster">Contains poster of movie</string>
+    <string name="error_need_internet">This application needs Internet connection to function.</string>
+    <string name="key_themoviedb">Api Key</string>
+    <string name="menu_sort_popularity">Popularity</string>
+    <string name="menu_sort_vote_average">Rating</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="txtHeadingReleaseDate">Release Date</string>
+    <string name="txtReleaseDate">Release date</string>
+    <string name="txtHeadingRating">Rating</string>
+    <string name="txtRating">Rating</string>
+    <string name="txtMovieTitle">Movie</string>
+    <string name="txtMovieDescription">Movie Description</string>
+</resources>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.android.popularmovies.activity.MoviesDetailActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <ImageView
+            android:id="@+id/imageview_poster"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="3"
+            android:contentDescription="@string/movie_poster"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingEnd="2dp"
+            android:layout_weight="2"
+            android:paddingLeft="5dp"
+            android:paddingRight="2dp"
+            android:paddingStart="5dp"
+            android:paddingTop="2dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/txtHeadingReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtHeadingReleaseDate"
+                android:textSize="@dimen/heading_text_size" />
+
+            <TextView
+                android:id="@+id/txtReleaseDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="2dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="2dp"
+                android:text="@string/txtReleaseDate"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/txtHeadingRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="@string/txtHeadingRating"
+                android:textSize="@dimen/abc_text_size_medium_material" />
+
+            <TextView
+                android:id="@+id/txtRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="2dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="2dp"
+                android:text="@string/txtRating"
+                android:textSize="@dimen/abc_text_size_large_material" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+
+        <TextView
+            android:id="@+id/txtMovieTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingTop="10dp"
+            android:text="@string/txtMovieTitle"
+            android:textSize="@dimen/abc_text_size_headline_material" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txtMovieDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txtMovieDescription" />
+
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
