@@ -8,7 +8,7 @@
     <string name="example_original_title">The Green Poster Man</string>
     <string name="example_release_date">08–31–2015</string>
     <string name="example_vote_average">8.2/10</string>
-    <string name="example_overview">A green, disconcerted, man takes on the mafia in underground North Korea to save his ferret. He\'ll find a lot of challenges, horror and romance on his journey. Who knows? Maybe Kim Jung-un makes a cameo appearance?</string>
+    <string name="example_overview">Movie Description</string>
     <string name="parcel_movie">PARCEL_MOVIE</string>
     <string name="pref_sort_method_key">SORT_METHOD</string>
     <string name="pref_sort_vote_avg_desc_key">SORT_VOTE_AVERAGE_DESC</string>
@@ -17,7 +17,7 @@
     <string name="tmdb_sort_vote_avg_desc">vote_average.desc</string>
     <string name="description_movie_poster">Contains poster of movie</string>
     <string name="error_need_internet">This application needs Internet connection to function.</string>
-    <string name="key_themoviedb">Api Key</string>
+    <string name="key_themoviedb">c7d5df693891f38c50f856a004d08690</string>
     <string name="menu_sort_popularity">Popularity</string>
     <string name="menu_sort_vote_average">Rating</string>
     <string name="movie_poster">Movie Poster</string>

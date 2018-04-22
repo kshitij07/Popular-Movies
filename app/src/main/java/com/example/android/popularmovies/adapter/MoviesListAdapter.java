@@ -19,12 +19,6 @@ public class MoviesListAdapter extends BaseAdapter {
     private final Context mContext;
     private final Movie[] mMovies;
 
-    /**
-     * Constructor
-     *
-     * @param context Application context
-     * @param movies  Movie array
-     */
     public MoviesListAdapter(Context context, Movie[] movies) {
         mContext = context;
         mMovies = movies;
@@ -57,7 +51,6 @@ public class MoviesListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView;
 
-        // Will be null if it's not recycled. Will initialize ImageView if new.
         if (convertView == null) {
             imageView = new ImageView(mContext);
             imageView.setAdjustViewBounds(true);

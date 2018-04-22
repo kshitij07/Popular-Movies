@@ -55,8 +55,6 @@ public class MoviesDetailActivity extends AppCompatActivity {
         txtMovieDescription.setText(overView);
         txtRating.setText(movie.getDetailedVoteAverage());
 
-        // First get the release date from the object - to be used if something goes wrong with
-        // getting localized release date (catch).
         String releaseDate = movie.getReleaseDate();
         if(releaseDate != null) {
             try {

@@ -26,14 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     private final String LOG_TAG = MainActivity.class.getSimpleName();
 
-    /**
-     * Presents movie posters
-     */
     private GridView mGridView;
 
-    /**
-     * Holds menu items
-     */
     private Menu mMenu;
 
     @Override
@@ -72,14 +66,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, mMenu);
 
-        // Make menu items accessible
         mMenu = menu;
 
-        // Add menu items
-        mMenu.add(Menu.NONE, // No group
-                R.string.pref_sort_pop_desc_key, // ID
-                Menu.NONE, // Sort order: not relevant
-                null) // No text to display
+        mMenu.add(Menu.NONE,
+                R.string.pref_sort_pop_desc_key,
+                Menu.NONE,
+                null)
                 .setVisible(false)
                 .setIcon(R.drawable.ic_popular)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
@@ -90,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
                 .setIcon(R.drawable.icon_top_rated)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
 
-        // Update menu to show relevant items
         updateMenu();
 
         return true;
@@ -102,13 +93,11 @@ public class MainActivity extends AppCompatActivity {
 
         int numMovieObjects = mGridView.getCount();
         if (numMovieObjects > 0) {
-            // Get Movie objects from gridview
             Movie[] movies = new Movie[numMovieObjects];
             for (int i = 0; i < numMovieObjects; i++) {
                 movies[i] = (Movie) mGridView.getItemAtPosition(i);
             }
 
-            // Save Movie objects to bundle
             outState.putParcelableArray(getString(R.string.parcel_movie), movies);
         }
 
@@ -134,9 +123,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * Listener for clicks on movie posters in GridView
-     */
     private final GridView.OnItemClickListener moviePosterClickListener = new GridView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -168,12 +154,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Checks if there is Internet accessible.
-     * Based on a stackoverflow snippet
-     *
-     * @return True if there is Internet. False if not.
-     */
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -182,9 +162,6 @@ public class MainActivity extends AppCompatActivity {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
-    /**
-     * Update menu based on method found set in SharedPreferences
-     */
     private void updateMenu() {
         String sortMethod = getSortMethod();
 
@@ -197,12 +174,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Gets the sort method set by user from SharedPreferences. If no sort method is defined it will
-     * default to sorting by popularity.
-     *
-     * @return Sort method from SharedPreferenced
-     */
     private String getSortMethod() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
@@ -210,11 +181,6 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.tmdb_sort_pop_desc));
     }
 
-    /**
-     * Saves the selected sort method
-     *
-     * @param sortMethod Sort method to save
-     */
     private void updateSharedPrefs(String sortMethod) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor editor = sharedPref.edit();
