@@ -112,7 +112,7 @@ public class MoviesAsyncTask extends AsyncTask<String, Void, Movie[]> {
         return new URL(builtUri.toString());
     }
 
-    private Movie[] getMoviesDataFromJson(String moviesJsonStr) throws JSONException {
+    private Movie[] getMoviesDataFromJson(String moviesJsonStr) throws JSONException { 
         final String TAG_RESULTS = "results";
         final String TAG_ORIGINAL_TITLE = "original_title";
         final String TAG_POSTER_PATH = "poster_path";
