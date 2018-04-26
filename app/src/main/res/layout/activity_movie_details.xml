@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +9,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.android.popularmovies.activity.MoviesDetailActivity">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -94,16 +97,12 @@
             android:text="@string/txtMovieTitle"
             android:textSize="@dimen/abc_text_size_headline_material" />
 
-        <ScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtMovieDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtMovieDescription" />
 
-            <TextView
-                android:id="@+id/txtMovieDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/txtMovieDescription" />
-
-        </ScrollView>
     </LinearLayout>
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

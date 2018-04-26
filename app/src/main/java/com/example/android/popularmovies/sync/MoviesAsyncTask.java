@@ -1,9 +1,11 @@
 package com.example.android.popularmovies.sync;
 
+import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.android.popularmovies.R;
 import com.example.android.popularmovies.model.OnTaskCompleted;
 import com.example.android.popularmovies.model.Movie;
 
@@ -26,10 +28,14 @@ public class MoviesAsyncTask extends AsyncTask<String, Void, Movie[]> {
     private final OnTaskCompleted onTaskCompleted;
 
     private final String LOG_TAG = MoviesAsyncTask.class.getSimpleName();
+    private URL url;
 
-    public MoviesAsyncTask(String mApiKey, OnTaskCompleted onTaskCompleted) {
+    Context context;
+
+    public MoviesAsyncTask(String mApiKey, OnTaskCompleted onTaskCompleted, Context context) {
         this.mApiKey = mApiKey;
         this.onTaskCompleted = onTaskCompleted;
+        this.context=context;
     }
 
     @Override
@@ -91,15 +97,18 @@ public class MoviesAsyncTask extends AsyncTask<String, Void, Movie[]> {
     }
 
     private URL getApiUrl(String[] parameters) throws MalformedURLException {
-        final String TMDB_BASE_URL = "https://api.themoviedb.org/3/discover/movie?";
-        final String SORT_BY_PARAM = "sort_by";
-        final String API_KEY_PARAM = "api_key";
 
+        String TMDB_BASE_URL="";
+        final String API_KEY_PARAM = "api_key";
+        if(parameters[0].equals(context.getResources().getString(R.string.tmdb_sort_pop_desc))){
+            TMDB_BASE_URL = "https://api.themoviedb.org/3/movie/popular";
+        } else{
+            TMDB_BASE_URL = "https://api.themoviedb.org/3/movie/top_rated";
+        }
         Uri builtUri = Uri.parse(TMDB_BASE_URL).buildUpon()
-                .appendQueryParameter(SORT_BY_PARAM, parameters[0])
                 .appendQueryParameter(API_KEY_PARAM, mApiKey)
                 .build();
-
+        Log.i("url", String.valueOf(builtUri));
         return new URL(builtUri.toString());
     }
 

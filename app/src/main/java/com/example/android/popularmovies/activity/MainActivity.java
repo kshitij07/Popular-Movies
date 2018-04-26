@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             };
 
             // Execute task
-            MoviesAsyncTask movieTask = new MoviesAsyncTask(apiKey, taskCompleted);
+            MoviesAsyncTask movieTask = new MoviesAsyncTask(apiKey, taskCompleted, MainActivity.this);
             movieTask.execute(sortMethod);
         } else {
             Toast.makeText(this, getString(R.string.error_need_internet), Toast.LENGTH_LONG).show();
